@@ -1,0 +1,17 @@
+.add {
+    display: flex;
+    align-items: center;
+    max-width: 450px;
+    margin: 0 auto 30px auto;
+    height: 40px;
+}
+
+.add__input {
+    width: 78%;
+    margin-right: 2%;
+    height: 100%;
+}
+
+.add__button {
+    width: 20%;
+}
