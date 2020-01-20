@@ -14,12 +14,12 @@ export class TaskListComponent implements OnInit {
 
   constructor(public taskListService: TaskListService) { }
 
-  getTask():void {
-    this.list = this.taskListService.getTask();
-  }
+  // getTask():void {
+  //   this.list = this.taskListService.allTask();
+  // }
 
   ngOnInit() {
-    this.getTask();
+    // this.getTask();
   }
 
 }

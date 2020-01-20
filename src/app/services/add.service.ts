@@ -1,20 +1,16 @@
 import { Injectable } from '@angular/core';
 import { TaskItem } from '../models/TaskItem';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
-export class TaskListService {
+export class AddService {
 
   item: TaskItem;
   list: TaskItem[] = [];
-  id: number = 0;
-
   title: string = "";
 
-  getText(text) {
+  getTaskLabel(text) {
     this.title = text;
   }
 
@@ -42,4 +38,5 @@ export class TaskListService {
     this.addItem();
     return this.list;
   }
+
 }
