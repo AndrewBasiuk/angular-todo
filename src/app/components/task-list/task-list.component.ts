@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskItem } from 'src/app/models/TaskItem';
-import { TaskListService } from 'src/app/services/task-list.service';
+import { AddService } from 'src/app/services/add.service';
 
 
 @Component({
@@ -12,14 +12,15 @@ export class TaskListComponent implements OnInit {
 
   list: TaskItem[];
 
-  constructor(public taskListService: TaskListService) { }
 
-  // getTask():void {
-  //   this.list = this.taskListService.allTask();
-  // }
+  constructor(public addService: AddService) { }
+
+  getTask(): void {
+    this.list = this.addService.getTaskList();
+  }
 
   ngOnInit() {
-    // this.getTask();
+    this.getTask();
   }
 
 }

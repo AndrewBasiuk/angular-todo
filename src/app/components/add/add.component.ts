@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AddService } from 'src/app/services/add.service';
 import { TaskList } from '../taskList';
+import { TaskItem } from 'src/app/models/TaskItem';
 
 
 @Component({
@@ -10,18 +11,31 @@ import { TaskList } from '../taskList';
 })
 export class AddComponent implements OnInit {
 
-  newTask: string;
-  taskList: TaskList;
+  taskTitle: string;
+  item: TaskItem;
+  taskList: TaskItem[];
 
   constructor(public addService: AddService) { }
 
-  addTask():void {
-    this.addService.getTaskLabel(this.newTask);
+  newTaskItem() {
+
+    this.item = {
+      title: this.taskTitle,
+      checked: true
+    }
+
+    return this.item;
+
   }
 
-  ngOnInit() {
-    // this.addTask();
-    this.taskList.getList();
+  addTask():void {
+    this.addService.addTaskItem(this.newTaskItem());
+
+    console.log(this.addService.getTaskList());
+    
+  }
+
+  ngOnInit() {    
   }
 
 

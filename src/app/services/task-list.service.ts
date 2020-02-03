@@ -9,8 +9,12 @@ import { TaskItem } from '../models/TaskItem';
 export class TaskListService {
 
   item: TaskItem;
-  list: TaskItem[] = [];
-  id: number = 0;
+  list: TaskItem[] = [
+      {
+          title: "first",
+          checked: false
+      }
+  ];
 
   title: string = "";
 
